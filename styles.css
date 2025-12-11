@@ -1636,6 +1636,8 @@ html {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
+
+    /* Navbar */
     .nav-menu {
         position: fixed;
         top: 80px;
@@ -1646,8 +1648,10 @@ html {
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 2rem;
-        gap: 1rem;
+        gap: 1.5rem;
         transition: left var(--transition-base);
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .nav-menu.active {
@@ -1658,53 +1662,140 @@ html {
         display: flex;
     }
 
+    /* Hero Section */
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .hero-stats {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .page-header h1 {
-        font-size: 2rem;
-    }
-
-    .train-item {
-        grid-template-columns: 1fr;
+        position: static;
+        /* Reset absolute positioning */
+        transform: none;
+        /* Remove centering transform */
+        flex-direction: row;
+        /* Keep horizontal */
+        flex-wrap: wrap;
+        /* Allow wrapping if needed */
+        justify-content: center;
         gap: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1.5rem;
+        border-radius: var(--radius-lg);
+        margin-top: 2rem;
+        width: 100%;
+        /* Ensure full width container */
     }
 
+    .stat-item {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: none;
+        /* Reset vertical borders */
+        padding-bottom: 0;
+        padding-right: 1rem;
+        flex: 1;
+        /* Distribute space evenly */
+        min-width: 80px;
+    }
+
+    .stat-item:last-child {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+        /* Smaller numbers for mobile */
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+
+
+    /* Grids */
+    .features-grid,
+    .promotions-grid,
+    .travel-destinations,
+    .packages-grid,
+    .about-stats,
+    .payment-methods {
+        grid-template-columns: 1fr;
+        /* Force single column */
+    }
+
+    /* Booking Steps */
     .step-indicator {
         overflow-x: auto;
         justify-content: flex-start;
-        gap: 2rem;
+        gap: 1rem;
         padding-bottom: 1rem;
+        margin: 0 -1rem 2rem -1rem;
+        /* Negative margin to pull to edges */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scroll on iOS */
     }
 
-    .step-buttons {
+    .step {
+        flex: 0 0 auto;
+        /* Don't shrink */
+        min-width: 100px;
+        /* Ensure wide enough */
+    }
+
+    .step-label {
+        font-size: 0.8rem;
+    }
+
+    /* Timetable Mobile Refactor */
+    .timetable-item {
         flex-direction: column;
+        /* Stack sections */
+        gap: 1rem;
+        align-items: flex-start;
     }
 
-    .promotions-grid,
-    .travel-destinations,
-    .packages-grid {
-        grid-template-columns: 1fr;
+    .timetable-train {
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .timetable-stops {
+        width: 100%;
+        padding: 0;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        /* CRITICAL: Allow badges to wrap nicely */
+    }
+
+    .stop-badge {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.75rem;
+    }
+
+    .guide-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .nav-container {
@@ -1715,6 +1806,24 @@ html {
     .timetable-container,
     .info-container {
         padding: 0 1rem var(--spacing-xl);
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .ticket-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ticket-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+
+    .ticket-details-grid {
+        grid-template-columns: 1fr;
     }
 }
 
