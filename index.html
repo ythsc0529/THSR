@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="台灣高鐵 - 提供快速、便捷的高速鐵路服務，線上訂票、時刻表查詢、旅遊資訊一應俱全">
+    <meta name="keywords" content="台灣高鐵,高鐵訂票,時刻表,THSR,Taiwan High Speed Rail">
+    <title>台灣高鐵 Taiwan High Speed Rail</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="pic/THSR.png" alt="THSR Logo">
+                <span class="logo-text">台灣高鐵</span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-page="home">首頁</a>
+                <a href="#booking" class="nav-link" data-page="booking">線上訂票</a>
+                <a href="#timetable" class="nav-link" data-page="timetable">時刻表</a>
+                <a href="#ticket-info" class="nav-link" data-page="ticket-info">購票資訊</a>
+                <a href="#guide" class="nav-link" data-page="guide">乘車指南</a>
+                <a href="#promotions" class="nav-link" data-page="promotions">優惠活動</a>
+                <a href="#travel" class="nav-link" data-page="travel">搭高鐵遊台灣</a>
+                <a href="#about" class="nav-link" data-page="about">關於我們</a>
+            </div>
+
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <div class="hero-section"
+                style="background-image: linear-gradient(rgba(10, 14, 39, 0.6), rgba(26, 31, 58, 0.8)), url('pic/THSR run.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">台灣高鐵</h1>
+                    <p class="hero-subtitle">快速 · 便捷 · 舒適的高速鐵路服務</p>
+                    <button class="cta-button" onclick="navigateToPage('booking')">
+                        立即訂票
+                        <span class="button-arrow">→</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">車站數量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">300</div>
+                        <div class="stat-label">km/h 最高時速</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">96</div>
+                        <div class="stat-label">分鐘 南北直達</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2 class="section-title">快速服務</h2>
+                <div class="features-grid">
+                    <div class="feature-card" onclick="navigateToPage('booking')">
+                        <div class="feature-icon">🎫</div>
+                        <h3>線上訂票</h3>
+                        <p>24小時線上訂票服務，快速便捷</p>
+                    </div>
+                    <div class="feature-card" onclick="navigateToPage('timetable')">
+                        <div class="feature-icon">⏰</div>
+                        <h3>時刻表查詢</h3>
+                        <p>即時查詢列車時刻與停靠站</p>
+                    </div>
+                    <div class="feature-card" onclick="navigateToPage('promotions')">
+                        <div class="feature-icon">🎉</div>
+                        <h3>優惠活動</h3>
+                        <p>多種優惠方案，省錢又便利</p>
+                    </div>
+                    <div class="feature-card" onclick="navigateToPage('travel')">
+                        <div class="feature-icon">🗺️</div>
+                        <h3>旅遊台灣</h3>
+                        <p>探索台灣美景，高鐵帶你輕鬆遊</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Page -->
+        <section id="booking-page" class="page">
+            <div class="page-header">
+                <h1>線上訂票系統</h1>
+                <p>選擇您的旅程，享受高鐵便捷服務</p>
+            </div>
+
+            <!-- Booking Steps -->
+            <div class="booking-container">
+                <!-- Step Indicator -->
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">選擇行程</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">選擇車次</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">選擇座位</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label">確認訂單</div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-label">付款</div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Journey Selection -->
+                <div class="booking-step" id="step1" style="display: block;">
+                    <div class="card">
+                        <h2>選擇行程</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>出發站</label>
+                                <select id="departureStation" class="form-control">
+                                    <option value="">請選擇車站</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>到達站</label>
+                                <select id="arrivalStation" class="form-control">
+                                    <option value="">請選擇車站</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>出發日期</label>
+                                <input type="date" id="travelDate" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>時間</label>
+                                <select id="travelTime" class="form-control">
+                                    <option value="00:00">不限時間</option>
+                                    <option value="06:00">06:00 之後</option>
+                                    <option value="09:00">09:00 之後</option>
+                                    <option value="12:00">12:00 之後</option>
+                                    <option value="15:00">15:00 之後</option>
+                                    <option value="18:00">18:00 之後</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="searchTrains()">查詢車次</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Train Selection -->
+                <div class="booking-step" id="step2" style="display: none;">
+                    <div class="card">
+                        <h2>選擇車次</h2>
+                        <div id="trainList" class="train-list"></div>
+                        <div class="step-buttons">
+                            <button class="btn-secondary" onclick="goToStep(1)">上一步</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Seat Selection -->
+                <div class="booking-step" id="step3" style="display: none;">
+                    <div class="card">
+                        <h2>選擇座位</h2>
+                        <div class="form-group">
+                            <label>車廂等級</label>
+                            <select id="seatClass" class="form-control">
+                                <option value="standard">標準車廂</option>
+                                <option value="business">商務車廂</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>座位偏好</label>
+                            <select id="seatPreference" class="form-control">
+                                <option value="any">不限</option>
+                                <option value="window">靠窗</option>
+                                <option value="aisle">走道</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>票數</label>
+                            <input type="number" id="ticketCount" class="form-control" value="1" min="1" max="10">
+                        </div>
+                        <div id="fareInfo" class="fare-info"></div>
+                        <div class="step-buttons">
+                            <button class="btn-secondary" onclick="goToStep(2)">上一步</button>
+                            <button class="btn-primary" onclick="goToStep(4)">確認訂票</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Confirmation -->
+                <div class="booking-step" id="step4" style="display: none;">
+                    <div class="card">
+                        <h2>訂單確認</h2>
+                        <div id="orderSummary" class="order-summary"></div>
+                        <div class="step-buttons">
+                            <button class="btn-secondary" onclick="goToStep(3)">上一步</button>
+                            <button class="btn-primary" onclick="confirmBooking()">確認並付款</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Payment -->
+                <!-- Step 5: Payment -->
+                <div class="booking-step" id="step5" style="display: none;">
+                    <div class="card">
+                        <h2>付款方式</h2>
+                        <div class="payment-summary-card">
+                            <h3>訂單摘要</h3>
+                            <div id="paymentSummary"></div>
+                        </div>
+                        <div class="payment-method-card active" onclick="selectPaymentMethod('credit')">
+                            <div class="payment-method-icon">💳</div>
+                            <h3>信用卡</h3>
+                            <p>VISA / MasterCard</p>
+                        </div>
+                        <div class="payment-method-card" onclick="selectPaymentMethod('linepay')">
+                            <div class="payment-method-icon"><img src="pic/line pay.png" alt="Line Pay"></div>
+                            <h3>LINE Pay</h3>
+                            <p>快速便捷支付</p>
+                        </div>
+                        <div class="payment-method-card" onclick="selectPaymentMethod('applepay')">
+                            <div class="payment-method-icon"><img src="pic/apple pay.png" alt="Apple Pay"></div>
+                            <h3>Apple Pay</h3>
+                            <p>安全快速</p>
+                        </div>
+                        <div class="payment-method-card" onclick="selectPaymentMethod('googlepay')">
+                            <div class="payment-method-icon"><img src="pic/google pay.jpg" alt="Google Pay"></div>
+                            <h3>Google Pay</h3>
+                            <p>輕鬆付款</p>
+                        </div>
+                        <div class="payment-method-card" onclick="selectPaymentMethod('store')">
+                            <div class="payment-method-icon">🏪</div>
+                            <h3 id="payment_store_option">超商代碼</h3>
+                            <p>7-11 / 全家 / 萊爾富</p>
+                        </div>
+                    </div>
+                    <div id="creditForm" class="payment-form" style="display: block;">
+                        <div class="form-grid">
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>持卡人姓名</label>
+                                <input type="text" id="cardName" class="form-control" placeholder="請輸入持卡人姓名">
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>卡號</label>
+                                <input type="text" id="cardNumber" class="form-control"
+                                    placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCardNumber(this)">
+                            </div>
+                            <div class="form-group">
+                                <label>有效期限</label>
+                                <input type="text" id="cardExpiry" class="form-control" placeholder="MM/YY"
+                                    maxlength="5" oninput="formatExpiry(this)">
+                            </div>
+                            <div class="form-group">
+                                <label>安全碼</label>
+                                <input type="text" id="cardCVV" class="form-control" placeholder="CVV" maxlength="3">
+                            </div>
+                        </div>
+                        <div id="payment-loading" class="payment-loading" style="display: none;">
+                            <div class="spinner"></div>
+                            <p>正在處理付款...</p>
+                        </div>
+                    </div>
+                    <div id="linepayForm" class="payment-form" style="display: none;">
+                        <div class="payment-info-box">
+                            <p>✓ 點擊「確認付款」後將跳轉至 LINE Pay 頁面</p>
+                            <p>✓ 使用 LINE 帳號快速完成付款</p>
+                            <p>✓ 支援信用卡、LINE Points 折抵</p>
+                        </div>
+                    </div>
+                    <div id="applepayForm" class="payment-form" style="display: none;">
+                        <div class="payment-info-box">
+                            <p>✓ 使用 Touch ID 或 Face ID 快速付款</p>
+                            <p>✓ 安全加密，保護您的隱私</p>
+                            <p>✓ 支援所有 Apple 裝置</p>
+                        </div>
+                    </div>
+                    <div id="googlepayForm" class="payment-form" style="display: none;">
+                        <div class="payment-info-box">
+                            <p>✓ 使用 Google 帳號快速付款</p>
+                            <p>✓ 支援 Android 手機與 Chrome 瀏覽器</p>
+                            <p>✓ 安全便捷的支付體驗</p>
+                        </div>
+                    </div>
+                    <div id="storeForm" class="payment-form" style="display: none;">
+                        <div class="payment-info-box">
+                            <p>✓ 取得繳費代碼後，請於 3 天內至便利商店繳費</p>
+                            <p>✓ 支援：7-ELEVEN、全家、萊爾富、OK 便利店</p>
+                            <p>✓ 繳費完成後訂單即生效</p>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn-secondary" onclick="goToStep(4)">上一步</button>
+                        <button class="btn-primary" onclick="processPayment()">確認付款</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Payment Success Page (Hidden by default) -->
+            <div id="paymentSuccessPage" class="payment-success-container" style="display: none;">
+                <div class="success-card">
+                    <div class="success-icon-wrapper">
+                        <div class="success-icon">✓</div>
+                    </div>
+                    <h1>付款成功</h1>
+                    <p class="success-message">您的訂票已完成！祝您旅途愉快。</p>
+
+                    <div class="ticket-preview">
+                        <div class="ticket-header">
+                            <span class="ticket-type-label">高鐵電子車票</span>
+                            <span class="ticket-status">已付款</span>
+                        </div>
+                        <div class="ticket-body">
+                            <div class="ticket-row">
+                                <div class="ticket-station from">
+                                    <div class="station-name" id="successDepStation">台北</div>
+                                    <div class="station-time" id="successDepTime">09:00</div>
+                                </div>
+                                <div class="ticket-arrow">
+                                    <span class="train-no" id="successTrainNo">801</span>
+                                    <div class="arrow-line">➔</div>
+                                    <div class="duration" id="successDuration">1h 30m</div>
+                                </div>
+                                <div class="ticket-station to">
+                                    <div class="station-name" id="successArrStation">高雄</div>
+                                    <div class="station-time" id="successArrTime">10:30</div>
+                                </div>
+                            </div>
+                            <div class="ticket-details-grid">
+                                <div class="ticket-detail">
+                                    <label>日期</label>
+                                    <span id="successDate">2023-12-11</span>
+                                </div>
+                                <div class="ticket-detail">
+                                    <label>座位</label>
+                                    <span id="successSeat">7車 8A, 8B</span>
+                                </div>
+                                <div class="ticket-detail">
+                                    <label>車廂</label>
+                                    <span id="successCarClass">標準車廂</span>
+                                </div>
+                                <div class="ticket-detail">
+                                    <label>票價</label>
+                                    <span id="successPrice">NT$ 2,980</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticket-footer">
+                            <div class="qr-code-placeholder">
+                                <div class="qr-pattern"></div>
+                            </div>
+                            <div class="ticket-id">訂單編號：<span id="successOrderId">202312110001</span></div>
+                        </div>
+                    </div>
+
+                    <div class="success-actions">
+                        <button class="btn-primary" onclick="navigateToPage('home')">返回首頁</button>
+                        <button class="btn-secondary" onclick="navigateToPage('booking')">繼續訂票</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Management -->
+            <div class="order-management">
+                <h2>訂單管理</h2>
+                <div id="orderList" class="order-list"></div>
+            </div>
+        </section>
+
+        <!-- Timetable Page -->
+        <section id="timetable-page" class="page">
+            <div class="page-header">
+                <h1>時刻表查詢</h1>
+                <p>查詢列車時刻與停靠站資訊</p>
+            </div>
+
+            <div class="timetable-container">
+                <div class="card">
+                    <div class="timetable-filters">
+                        <div class="form-group">
+                            <label>選擇車站</label>
+                            <select id="timetableStation" class="form-control">
+                                <option value="all">全部車站</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>方向</label>
+                            <div class="direction-toggle">
+                                <button class="direction-btn active" data-direction="southbound">南下</button>
+                                <button class="direction-btn" data-direction="northbound">北上</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>車種篩選</label>
+                            <div class="train-type-filters">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="express" checked> 直達車
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="semi-express" checked> 跳蛙式
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="local" checked> 各站停靠
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="timetableDisplay" class="timetable-display"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ticket Info Page -->
+        <section id="ticket-info-page" class="page">
+            <div class="page-header">
+                <h1>購票資訊</h1>
+                <p>了解票種、票價與購票方式</p>
+            </div>
+
+            <div class="info-container">
+                <div class="card">
+                    <h2>票種介紹</h2>
+                    <div class="ticket-types">
+                        <div class="ticket-type-item">
+                            <h3>🎫 標準車廂</h3>
+                            <p>舒適的座位空間，適合一般旅客</p>
+                        </div>
+                        <div class="ticket-type-item">
+                            <h3>💼 商務車廂</h3>
+                            <p>寬敞座椅與優質服務，商務首選</p>
+                        </div>
+                        <div class="ticket-type-item">
+                            <h3>👨‍👩‍👧‍👦 團體票</h3>
+                            <p>11人以上團體享有優惠折扣</p>
+                        </div>
+                        <div class="ticket-type-item">
+                            <h3>🎓 學生票</h3>
+                            <p>持學生證享有特別優惠</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>購票方式</h2>
+                    <div class="purchase-methods">
+                        <div class="method-item">
+                            <div class="method-icon">💻</div>
+                            <h3>線上訂票</h3>
+                            <p>24小時便利訂票，信用卡付款</p>
+                        </div>
+                        <div class="method-item">
+                            <div class="method-icon">🏪</div>
+                            <h3>超商取票</h3>
+                            <p>全台便利商店皆可取票</p>
+                        </div>
+                        <div class="method-item">
+                            <div class="method-icon">🎫</div>
+                            <h3>車站購票</h3>
+                            <p>各車站售票窗口與自動售票機</p>
+                        </div>
+                        <div class="method-item">
+                            <div class="method-icon">📱</div>
+                            <h3>手機APP</h3>
+                            <p>T-EX行動購票快速方便</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>票價說明</h2>
+                    <p>票價依起迄站距離計算，以下為參考票價（標準車廂）：</p>
+                    <ul class="info-list">
+                        <li>台北 ↔ 台中：NT$ 700</li>
+                        <li>台北 ↔ 台南：NT$ 1,350</li>
+                        <li>台北 ↔ 左營：NT$ 1,490</li>
+                        <li>台中 ↔ 左營：NT$ 790</li>
+                    </ul>
+                    <p class="note">* 商務車廂票價為標準車廂的1.5倍</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Page -->
+        <section id="guide-page" class="page">
+            <div class="page-header">
+                <h1>乘車指南</h1>
+                <p>搭乘流程與注意事項</p>
+            </div>
+
+            <div class="info-container">
+                <div class="card">
+                    <h2>🚄 搭乘流程</h2>
+                    <div class="guide-steps">
+                        <div class="guide-step">
+                            <div class="guide-step-number">1</div>
+                            <div class="guide-step-content">
+                                <h3>購票取票</h3>
+                                <p>透過線上、超商或車站購票並取得車票</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="guide-step-number">2</div>
+                            <div class="guide-step-content">
+                                <h3>進站驗票</h3>
+                                <p>於發車前30分鐘抵達車站，通過驗票閘門</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="guide-step-number">3</div>
+                            <div class="guide-step-content">
+                                <h3>候車上車</h3>
+                                <p>前往月台候車區，依車次與車廂號碼上車</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="guide-step-number">4</div>
+                            <div class="guide-step-content">
+                                <h3>對號入座</h3>
+                                <p>找到您的座位並放置行李</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="guide-step-number">5</div>
+                            <div class="guide-step-content">
+                                <h3>抵達出站</h3>
+                                <p>列車抵達目的地後，持票出站</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>⚠️ 注意事項</h2>
+                    <ul class="info-list">
+                        <li>請於發車前30分鐘抵達車站辦理驗票</li>
+                        <li>車廂內禁止吸菸、飲食（礦泉水除外）</li>
+                        <li>大型行李請放置於行李架</li>
+                        <li>請勿佔用博愛座，優先禮讓有需要的旅客</li>
+                        <li>車廂內請保持安靜，手機請轉震動</li>
+                        <li>寵物需裝於寵物箱內，不可佔用座位</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>🔄 退票改票</h2>
+                    <div class="refund-info">
+                        <h3>退票手續費</h3>
+                        <ul class="info-list">
+                            <li>發車前2小時以上：收取票價10%</li>
+                            <li>發車前30分鐘至2小時：收取票價20%</li>
+                            <li>發車前30分鐘內：不予退票</li>
+                        </ul>
+                        <h3>改票規定</h3>
+                        <ul class="info-list">
+                            <li>每張車票可改票一次</li>
+                            <li>需於原票班次發車前辦理</li>
+                            <li>限改當日或次日車次</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotions Page -->
+        <section id="promotions-page" class="page">
+            <div class="page-header">
+                <h1>優惠活動</h1>
+                <p>享受各種優惠方案，讓旅程更划算</p>
+            </div>
+
+            <div class="promotions-grid">
+                <div class="promotion-card">
+                    <div class="promotion-badge">熱門</div>
+                    <h3>早鳥優惠</h3>
+                    <div class="promotion-discount">7折起</div>
+                    <p>提前28天訂票享早鳥優惠，最高可省30%</p>
+                    <ul class="promotion-details">
+                        <li>28天前訂票：7折</li>
+                        <li>21天前訂票：75折</li>
+                        <li>14天前訂票：8折</li>
+                        <li>7天前訂票：9折</li>
+                    </ul>
+                </div>
+
+                <div class="promotion-card">
+                    <div class="promotion-badge">學生</div>
+                    <h3>學生優惠</h3>
+                    <div class="promotion-discount">75折</div>
+                    <p>持學生證購票享優惠折扣</p>
+                    <ul class="promotion-details">
+                        <li>適用對象：大專院校學生</li>
+                        <li>需出示有效學生證</li>
+                        <li>標準車廂75折優惠</li>
+                    </ul>
+                </div>
+
+                <div class="promotion-card">
+                    <div class="promotion-badge">團體</div>
+                    <h3>團體優惠</h3>
+                    <div class="promotion-discount">9折</div>
+                    <p>11人以上團體享優惠</p>
+                    <ul class="promotion-details">
+                        <li>11-20人：9折</li>
+                        <li>21-50人：85折</li>
+                        <li>51人以上：8折</li>
+                    </ul>
+                </div>
+
+                <div class="promotion-card">
+                    <h3>定期票</h3>
+                    <div class="promotion-discount">最划算</div>
+                    <p>經常往返同一路線的最佳選擇</p>
+                    <ul class="promotion-details">
+                        <li>30天內不限次數搭乘</li>
+                        <li>固定起迄站區間</li>
+                        <li>比單程票更優惠</li>
+                    </ul>
+                </div>
+
+                <div class="promotion-card">
+                    <h3>信用卡優惠</h3>
+                    <div class="promotion-discount">回饋</div>
+                    <p>指定信用卡購票享額外優惠</p>
+                    <ul class="promotion-details">
+                        <li>特定銀行信用卡</li>
+                        <li>享刷卡金回饋</li>
+                        <li>詳見各銀行優惠方案</li>
+                    </ul>
+                </div>
+
+                <div class="promotion-card">
+                    <h3>敬老愛心優惠</h3>
+                    <div class="promotion-discount">5折</div>
+                    <p>65歲以上長者與身心障礙者優惠</p>
+                    <ul class="promotion-details">
+                        <li>65歲以上長者</li>
+                        <li>持身心障礙手冊者</li>
+                        <li>標準車廂5折優惠</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Page -->
+        <section id="travel-page" class="page">
+            <div class="page-header">
+                <h1>搭高鐵遊台灣</h1>
+                <p>探索台灣之美，高鐵帶你輕鬆遊</p>
+            </div>
+
+            <div class="travel-destinations">
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('pic/Taipei.jpg');"></div>
+                    <div class="destination-content">
+                        <h3>🏙️ 台北</h3>
+                        <p>國際都會，101大樓、故宮博物院、夜市美食</p>
+                        <div class="destination-tags">
+                            <span class="tag">文化</span>
+                            <span class="tag">美食</span>
+                            <span class="tag">購物</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('pic/Taoyuan.jpg');"></div>
+                    <div class="destination-content">
+                        <h3>🌸 桃園</h3>
+                        <p>機場門戶，大溪老街、慈湖、拉拉山</p>
+                        <div class="destination-tags">
+                            <span class="tag">自然</span>
+                            <span class="tag">古蹟</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('pic/Hsinchu.jpg');"></div>
+                    <div class="destination-content">
+                        <h3>🎨 新竹</h3>
+                        <p>科技之都，內灣老街、司馬庫斯、城隍廟</p>
+                        <div class="destination-tags">
+                            <span class="tag">科技</span>
+                            <span class="tag">美食</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('pic/Taichung.jpg');"></div>
+                    <div class="destination-content">
+                        <h3>☀️ 台中</h3>
+                        <p>文化之都，逢甲夜市、高美濕地、彩虹眷村</p>
+                        <div class="destination-tags">
+                            <span class="tag">文創</span>
+                            <span class="tag">夜市</span>
+                            <span class="tag">景點</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('pic/Tainan.jpg');"></div>
+                    <div class="destination-content">
+                        <h3>🏛️ 台南</h3>
+                        <p>古都風華，安平古堡、赤崁樓、小吃美食</p>
+                        <div class="destination-tags">
+                            <span class="tag">古蹟</span>
+                            <span class="tag">美食</span>
+                            <span class="tag">歷史</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('pic/Kaohsiung.jpg');"></div>
+                    <div class="destination-content">
+                        <h3>🌴 高雄</h3>
+                        <p>海洋首都，愛河、駁二藝術特區、旗津海岸</p>
+                        <div class="destination-tags">
+                            <span class="tag">港口</span>
+                            <span class="tag">藝術</span>
+                            <span class="tag">海景</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="travel-packages">
+                <h2>推薦套裝行程</h2>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-image" style="background-image: url('pic/Taipei card.jpg');"></div>
+                        <h3>台北一日遊</h3>
+                        <div class="package-price">NT$ 2,999</div>
+                        <ul class="package-includes">
+                            <li>來回高鐵車票</li>
+                            <li>台北101觀景台門票</li>
+                            <li>故宮博物院導覽</li>
+                            <li>夜市美食券</li>
+                        </ul>
+                        <button class="btn-primary">查看詳情</button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-image" style="background-image: url('pic/Taichung card.jpg');"></div>
+                        <h3>台中二日遊</h3>
+                        <div class="package-price">NT$ 4,999</div>
+                        <ul class="package-includes">
+                            <li>來回高鐵車票</li>
+                            <li>一晚住宿</li>
+                            <li>高美濕地包車</li>
+                            <li>逢甲夜市導覽</li>
+                        </ul>
+                        <button class="btn-primary">查看詳情</button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-image" style="background-image: url('pic/Tainan card.jpg');"></div>
+                        <h3>台南古都之旅</h3>
+                        <div class="package-price">NT$ 3,599</div>
+                        <ul class="package-includes">
+                            <li>來回高鐵車票</li>
+                            <li>古蹟導覽行程</li>
+                            <li>特色小吃體驗</li>
+                            <li>安平老街巡禮</li>
+                        </ul>
+                        <button class="btn-primary">查看詳情</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about-page" class="page">
+            <div class="page-header">
+                <h1>關於我們</h1>
+                <p>台灣高速鐵路 - 連結台灣南北的快速動脈</p>
+            </div>
+
+            <div class="info-container">
+                <div class="card">
+                    <h2>公司簡介</h2>
+                    <p>台灣高速鐵路股份有限公司（簡稱台灣高鐵）於1998年成立，2007年1月5日正式通車營運。高鐵連結台灣西部南港至左營，全長349.5公里，設有12個車站，最高營運速度達每小時300公里。</p>
+                    <p>台灣高鐵採用日本新幹線系統，結合先進科技與優質服務，大幅縮短台灣南北交通時間，促進區域均衡發展，成為台灣交通建設的重要里程碑。</p>
+                </div>
+
+                <div class="about-stats">
+                    <div class="about-stat-card">
+                        <div class="stat-icon">🚄</div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-label">服務車站</div>
+                    </div>
+                    <div class="about-stat-card">
+                        <div class="stat-icon">📏</div>
+                        <div class="stat-value">349.5</div>
+                        <div class="stat-label">公里長度</div>
+                    </div>
+                    <div class="about-stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-value">300</div>
+                        <div class="stat-label">最高時速 km/h</div>
+                    </div>
+                    <div class="about-stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-value">70萬+</div>
+                        <div class="stat-label">日均旅客</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>🌱 永續發展</h2>
+                    <div class="sustainability">
+                        <div class="sustainability-item">
+                            <h3>綠色運輸</h3>
+                            <p>相較於公路運輸，高鐵每人每公里碳排放量僅為其1/4，是最環保的陸上交通工具</p>
+                        </div>
+                        <div class="sustainability-item">
+                            <h3>能源效率</h3>
+                            <p>採用再生煞車系統，將煞車動能轉換為電能回送電網，節能減碳</p>
+                        </div>
+                        <div class="sustainability-item">
+                            <h3>社會責任</h3>
+                            <p>提供敬老、愛心優惠票價，關懷弱勢族群，實踐企業社會責任</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>📍 車站資訊</h2>
+                    <div class="stations-list">
+                        <div class="station-item clickable" onclick="showStationDetails('nangang')">南港站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('taipei')">台北站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('banqiao')">板橋站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('taoyuan')">桃園站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('hsinchu')">新竹站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('miaoli')">苗栗站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('taichung')">台中站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('changhua')">彰化站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('yunlin')">雲林站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('chiayi')">嘉義站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('tainan')">台南站 →</div>
+                        <div class="station-item clickable" onclick="showStationDetails('zuoying')">左營站</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>📞 聯絡我們</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>客服專線：</strong>
+                            <p>（02）6626-8000</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>服務時間：</strong>
+                            <p>每日 06:00 - 24:00</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>官方網站：</strong>
+                            <p>www.thsrc.com.tw</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>台灣高鐵</h3>
+                <p>連結台灣南北的快速動脈</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速連結</h4>
+                <a href="#booking">線上訂票</a>
+                <a href="#timetable">時刻表</a>
+                <a href="#promotions">優惠活動</a>
+            </div>
+            <div class="footer-section">
+                <h4>客戶服務</h4>
+                <a href="#ticket-info">購票資訊</a>
+                <a href="#guide">乘車指南</a>
+                <a href="#about">關於我們</a>
+            </div>
+            <div class="footer-section">
+                <h4>聯絡資訊</h4>
+                <p>客服專線：(02) 6626-8000</p>
+                <p>服務時間：06:00 - 24:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 台灣高速鐵路股份有限公司 Taiwan High Speed Rail Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>處理中...</p>
+    </div>
+
+    <!-- Station Details Modal -->
+    <div id="stationModal" class="modal-overlay" onclick="if(event.target === this) closeStationModal()">
+        <div class="modal-content" id="stationModalContent">
+            <!-- Content will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
